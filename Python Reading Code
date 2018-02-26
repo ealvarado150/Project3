@@ -1,0 +1,8 @@
+#Python Code for reading the access logs
+#Question Number 3
+
+import urllib
+url_link = "https://s3.amazonaws.com/tcmg476/http_access_log"
+fh = urllib.urlopen(url_link)
+myfile = fh.read()
+print myfile
