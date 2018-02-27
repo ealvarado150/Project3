@@ -1,0 +1,8 @@
+#python code for counting line
+#question 2A
+
+myfile.count('local')
+
+myfile.count('remote')
+
+print(len(count))
