@@ -1,0 +1,27 @@
+import urllib
+url_link = "https://s3.amazonaws.com/tcmg476/http_access_log"
+fh = urllib.urlopen(url_link)
+myfile = fh.read()
+#print myfile
+
+print(myfile.count('local'))
+
+print(myfile.count('remote'))
+
+total_requests = myfile.count('local') + myfile.count('remote')
+print(total_requests)
+
+  
+
+#DONT DELETE THIS
+firstline = myfile.splitlines()[0]
+firstline_break = firstline.split()
+print(firstline_break)
+
+location = int(firstline_break[-2])
+print(int(location))
+
+if location == 200:
+    print('yes')
+else:
+    print('bad connection')
