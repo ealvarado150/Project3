@@ -1,0 +1,13 @@
+
+#DONT DELETE THIS
+firstline = myfile.splitlines()[0]
+firstline_break = firstline.split()
+print(firstline_break)
+
+location = int(firstline_break[-2])
+print(int(location))
+
+if location == 200:
+    print('yes')
+else:
+    print('bad connection')
