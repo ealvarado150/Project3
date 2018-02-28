@@ -1,0 +1,39 @@
+from urllib.request import urlretrieve
+URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
+LOCAL_FILE = 'local_copy.log'
+local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
+
+#Split Entire string 
+f = open('local_copy.log', 'r')
+for line in f:
+    print(line.split(' ')[:10])
+
+#local or remote
+f = open('local_copy.log', 'r')
+for line in f:
+    print(line.split('- -')[0])
+
+#dashes
+#loop stops if the data lines are different format, needs to skip irregular lines else: next(file) or continue
+f = open('local_copy.log', 'r')
+for line in f:
+    print(line.split(' [')[0].split('l ')[1])
+
+#day/month/year
+#loop stops if the data lines are different format, needs to skip irregular lines
+f = open('local_copy.log', 'r')
+for line in f:
+    print(line.split('- -')[1].split(':')[0])
+
+#month
+#loop stops if the data lines are different format, needs to skip irregular lines
+# month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+f = open('local_copy.log', 'r')
+for line in f:
+    print(line.split('- -')[1].split(':')[0].split('/')[1])
+
+#the connection status
+#loop stops if the data lines are different format, needs to skip irregular lines
+f = open('local_copy.log', 'r')
+for line in f:
+    print(line.split(' ')[8])
