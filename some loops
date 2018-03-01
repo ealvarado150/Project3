@@ -30,7 +30,10 @@ for line in f:
 # month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 f = open('local_copy.log', 'r')
 for line in f:
-    print(line.split('- -')[1].split(':')[0].split('/')[1])
+    if line in f== Oct:
+        print(line.split('- -')[1].split(':')[0].split('/')[1])
+    elif line in f == Nov:
+        print(line.split('- -')[1].split(':')[0].split('/')[1])
 
 #the connection status
 #loop stops if the data lines are different format, needs to skip irregular lines
