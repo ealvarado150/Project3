@@ -10,3 +10,6 @@ import urllib.request
 ERRORS = []
 
 
+print("Total Requests")
+total_requests = fh.count('local') + fh.count('remote')
+print(total_requests
