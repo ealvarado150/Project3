@@ -5,9 +5,10 @@ local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
 
 #Split Entire string 
 f = open('local_copy.log', 'r')
-for line in urllib.request:
+for line in open(LOCAL_FILE):
     text= (line.split(' '))
-
+    print(text)
+    
 #local or remote
 f = open('local_copy.log', 'r')
 for line in f:
