@@ -12,10 +12,75 @@ ERRORS = []
 # Total Requests
 print("Total Requests")
 total_requests = fh.count('local') + fh.count('remote')
-print(total_requests)
+print('Total Request:', total_requests)
 
+#Split Entire string 
+f = open('local_copy.log', 'rt')
+for line in open(LOCAL_FILE):
+    text= (line.split(' '))
+    if not text or len(text) < 10:
+      continue
+    connection = text[8]
+    connection_split = connection.split()
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    print(connection_split
+    four_errors = connection_split.find('404')
+    sum(four_errors)
+    
+    
+    
+    connection_count= connection.count('200')
+    for one in connection_count:
+      two_humdred = sum(connection_count)
+    
+    
+    
+    
+    
+    if num in connection_count == 1:
+      
+    sum(connection_count)
+    
+    if not text or len(text) !=10:
+      continue
+      connection = text[8]
+      connection_count= connection.count('200')
+      print(connection_count)
+    
+    
+     if not text or len(text) < 10:
+      continue
+    if not len(connection) < 3:
+      ERRORS.append(line)
+      continue
+    connection_count= connection.count('200')
+
+    
+    
+    
+    
+    
+    NoSuccess = re.findall(r'\s[4][0-9][0-9]', connection)
+    
+    four_errors = list(map(int, NoSuccess))
+    sum(four_errors)
+    
+    
+    print(text)
 #total four codes
-NoSuccess = re.findall(r'\s[4][0][0-9]',fh)
+    print()
+
+NoSuccess = re.findall(r'\s[4][0][0-9]', fh)
 four_errors = list(map(int, NoSuccess))
 sum(four_errors)
 
