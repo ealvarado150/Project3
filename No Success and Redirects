@@ -8,12 +8,12 @@ import urllib.request
 fh = str(urllib.request.urlopen(URL_PATH).read())
 ERRORS = []
 
-print(Total Requests)
+print("Total Requests")
 total_requests = fh.count('local') + fh.count('remote')
 print(total_requests)
 
 #total four codes
-NoSuccess = re.findall(r'\s[4][0-9][0-9]',fh)
+NoSuccess = re.findall(r'\s[4][0][0-9]',fh)
 four_errors = list(map(int, NoSuccess))
 sum(four_errors)
 
