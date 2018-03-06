@@ -39,6 +39,34 @@ RDpercent = len(three_codes)/total_requests
 print(RDpercent)
 print("Number in percentage: "+"{:.2%}".format(RDpercent));
 
+#Most file requested
+import collections
+logfile = open('local_copy.log','r')
+clean_log=[]
+for line in logfile:
+    try:
+        clean_log.append(line[line.index("GET")+4:line.index("HTTP")])
+    except:
+        pass
+counter = collections.Counter(clean_log)
+for count in counter.most_common(1):
+    print(str(count[1]) + "	" + str(count[0]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ######################
 # retrieve log file from URL
 from urllib.request import urlretrieve
