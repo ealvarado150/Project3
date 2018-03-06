@@ -6,7 +6,7 @@ local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
 from datetime import datetime
 import re
 import urllib.request
-# fh = str(urllib.request.urlopen(URL_PATH).read())
+fh = str(urllib.request.urlopen(URL_PATH).read())
 ERRORS = []
 
 # Total Requests
@@ -14,73 +14,25 @@ print("Total Requests")
 total_requests = fh.count('local') + fh.count('remote')
 print('Total Request:', total_requests)
 
-#Split Entire string 
+#Split Entire string & finding 4xx and 3xx instances
+four_errors = []
+three_errors = []
 f = open('local_copy.log', 'rt')
 for line in open(LOCAL_FILE):
     text= (line.split(' '))
     if not text or len(text) < 10:
       continue
     connection = text[8]
-    connection_split = connection.split()
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    printing_connection= connection.count('400')
+    if line in printing_connection == 1:
+        four_errors += 1
+        print(four_errors)
+    else:
+        continue
+     printing_connection= connection.count('300')
+     if line in printing_connection == 1:
+        three_errors += 1
+        print(three_errors)
+    else:
+        continue   
     
-    
-    print(connection_split
-    four_errors = connection_split.find('404')
-    sum(four_errors)
-    
-    
-    
-    connection_count= connection.count('200')
-    for one in connection_count:
-      two_humdred = sum(connection_count)
-    
-    
-    
-    
-    
-    if num in connection_count == 1:
-      
-    sum(connection_count)
-    
-    if not text or len(text) !=10:
-      continue
-      connection = text[8]
-      connection_count= connection.count('200')
-      print(connection_count)
-    
-    
-     if not text or len(text) < 10:
-      continue
-    if not len(connection) < 3:
-      ERRORS.append(line)
-      continue
-    connection_count= connection.count('200')
-
-    
-    
-    
-    
-    
-    NoSuccess = re.findall(r'\s[4][0-9][0-9]', connection)
-    
-    four_errors = list(map(int, NoSuccess))
-    sum(four_errors)
-    
-    
-    print(text)
-#total four codes
-    print()
-
-NoSuccess = re.findall(r'\s[4][0][0-9]', fh)
-four_errors = list(map(int, NoSuccess))
-sum(four_errors)
-
