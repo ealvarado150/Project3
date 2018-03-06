@@ -8,26 +8,28 @@ import urllib.request
 fh = str(urllib.request.urlopen(URL_PATH).read())
 ERRORS = []
 
-print("Total Requests")
-total_requests = fh.count('local') + fh.count('remote')
-print(total_requests)
-
-#total four codes
-NoSuccess = re.findall(r'\s[4][0][0-9]',fh)
-four_errors = list(map(int, NoSuccess))
-sum(four_errors)
+#Total Four Codes
+NoSuccess = re.findall(r'("\s[4][0][0-9]\s)',fh)
+str1 = ''.join(NoSuccess)
+four_codes = re.findall(r'([4][0][0-9])',str1)
+four_errors = list(map(int, four_codes))
+print("Total Four Codes:",len(four_errors))
 
 #total percentage of four codes
 print("Total percentage of 4XX status codes")
-NSpercent = sum(four_errors)/total_requests
+NSpercent = len(four_errors)/total_requests
 print(NSpercent)
+print("Number in percentage: "+"{:.2%}".format(NSpercent));
 
 #total three codes
-Redirect = re.findall(r'\s[3][0-9][0-9]',fh)
-three_codes = list(map(int, Redirect))
-sum(three_codes)
+Redirect = re.findall(r'("\s[3][0-9][0-9]\s)',fh)
+str2 = ''.join(Redirect)
+three_codes = re.findall(r'([3][0-9][0-9])',str2)
+three_errors = list(map(int, three_codes))
+print("Total Three Codes:",len(three_errors))
 
 #total percentage of three codes
 print("Total percentage of 3XX status codes")
-RDpercent = sum(three_codes)/total_requests
+RDpercent = len(three_codes)/total_requests
 print(RDpercent)
+print("Number in percentage: "+"{:.2%}".format(RDpercent));
