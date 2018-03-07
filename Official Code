@@ -13,6 +13,49 @@ print("Total Requests")
 total_requests = fh.count('local') + fh.count('remote')
 print('Total Request:', total_requests)
 
+#All Monthly Requests
+
+#Total January Requests
+month1 = re.findall(r'Jan/',fh)
+print("Total January Requests:", len(month1))
+
+#Total Feb Requests
+month2 = re.findall(r'Feb/',fh)
+
+#Total Mar Requests
+month3 = re.findall(r'Mar/',fh)
+
+#Total Apr Requests
+month4 = re.findall(r'Apr/',fh)
+
+#Total May Requests
+month5 = re.findall(r'May/',fh)
+
+#Total Jun Requests
+month6 = re.findall(r'Jun/',fh)
+
+#Total Jul Requests
+month7 = re.findall(r'Jul/',fh)
+
+#Total Aug Requests
+month8 = re.findall(r'Aug/',fh)
+
+#Total Sep Requests
+month9 = re.findall(r'Sep/',fh)
+
+#Total Oct Requests
+month10 = re.findall(r'Oct/',fh)
+
+#Total Nov Requests
+month11 = re.findall(r'Nov/',fh)
+
+#Total Dec Requests
+month12 = re.findall(r'Dec/',fh)
+
+output = ("Every months total requests:", "Total January Requests:", len(month1), "Total Febuary Requests:", len(month2), "Total March Requests:", len(month3), "Total April Requests:", len(month4), "Total May Requests:", len(month5), "Total June Requests:", len(month6), "Total July Requests:", len(month7), "Total August Requests:", len(month8), "Total September Requests:", len(month9), "Total October Requests:", len(month10), "Total November Requests:", len(month11), "Total December Requests:", len(month12))
+print(*output, sep = "\n")
+
+
 #Total Four Codes
 NoSuccess = re.findall(r'("\s[4][0][0-9]\s)',fh)
 str1 = ''.join(NoSuccess)
