@@ -1,3 +1,13 @@
+from urllib.request import urlretrieve
+URL_PATH = 'https://s3.amazonaws.com/tcmg476/http_access_log'
+LOCAL_FILE = 'local_copy.log'
+local_file, headers = urlretrieve(URL_PATH, LOCAL_FILE)
+from datetime import datetime
+import re
+import urllib.request
+fh = str(urllib.request.urlopen(URL_PATH).read())
+ERRORS = []
+
 #Total January Requests
 month1 = re.findall(r'Jan/',fh)
 print("Total January Requests:", len(month1))
