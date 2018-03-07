@@ -91,6 +91,8 @@ for line in logfile:
         clean_log.append(line[line.index("GET")+4:line.index("HTTP")])
     except:
         pass
+        
+# Line break Ben
 counter = collections.Counter(clean_log)
 for count in counter.most_common(1):
     print(str(count[1]) + "	" + str(count[0]))
