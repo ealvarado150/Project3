@@ -56,9 +56,16 @@ print("Total November Requests:", len(month11))
 month12 = re.findall(r'Dec/',fh)
 print("Total December Requests:", len(month12))
 
+-------------------------------------------------
+#Alternative way to get all months
+
+All_months = re.findall(r'[A-Z][a-z][a-z]/',fh)
+print(All_months)
+
 
 -------------------------------------------------
-# other method for months
+#IGNORE
+#Other method for months
 f = open('local_copy.log', 'rt')
 for line in f:
 	text1= (line.split('/'))
