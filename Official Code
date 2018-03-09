@@ -91,8 +91,8 @@ for line in logfile:
         clean_log.append(line[line.index("GET")+4:line.index("HTTP")])
     except:
         pass
-        
-# Line break Ben
+        continue
+
 counter = collections.Counter(clean_log)
 for count in counter.most_common(1):
     print(str(count[1]) + "	" + str(count[0]))
@@ -106,16 +106,87 @@ for line in logfile:
         clean_log.append(line[line.index("GET")+4:line.index("HTTP")])
     except:
         pass
+        continue
+
 counter = collections.Counter(clean_log)
 for count in counter.most_common(25000):
     print(str(count[1]) + "	" + str(count[0]))
     
-    
-    
-    
-    
+#4 creating 12 smaller files by month 25000
 
+JanMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Jan/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
 
+FebMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Feb/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+MarMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Mar/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+AprMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Apr/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+MayMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/May/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+JunMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Jun/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+JulMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Jul/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+AugMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Aug/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+SepMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Sep/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+OctMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Oct/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+NovMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Nov/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+DecMonth = re.findall(r'([a-z]{4,6}}*)( - - ).([0-9][0-9]/Dec/[0-9][0-9][0-9][0-9]:)(.{2}:.{2}:..) (.[0-9]{4}]) "([A-Z]+) (.+?)( HTTP.)([0-9].[0-9]"\s.{3,8})',fh)
+
+f = open("January.txt", "w")
+f.write("\n".join(map(lambda x: str(x), JanMonth)))
+f.close()
+
+f = open("February.txt", "w")
+f.write("\n".join(map(lambda x: str(x), FebMonth)))
+f.close()
+
+f = open("March.txt", "w")
+f.write("\n".join(map(lambda x: str(x), MarMonth)))
+f.close()
+
+f = open("April.txt", "w")
+f.write("\n".join(map(lambda x: str(x), AprMonth)))
+f.close()
+
+f = open("May.txt", "w")
+f.write("\n".join(map(lambda x: str(x), MayMonth)))
+f.close()
+
+f = open("June.txt", "w")
+f.write("\n".join(map(lambda x: str(x), JunMonth)))
+f.close()
+
+f = open("July.txt", "w")
+f.write("\n".join(map(lambda x: str(x), JulMonth)))
+f.close()
+
+f = open("August.txt", "w")
+f.write("\n".join(map(lambda x: str(x), AugMonth)))
+f.close()
+
+f = open("September.txt", "w")
+f.write("\n".join(map(lambda x: str(x), SepMonth)))
+f.close()
+
+f = open("October.txt", "w")
+f.write("\n".join(map(lambda x: str(x), OctMonth)))
+f.close()
+
+f = open("November.txt", "w")
+f.write("\n".join(map(lambda x: str(x), NovMonth)))
+f.close()
+
+f = open("December.txt", "w")
+f.write("\n".join(map(lambda x: str(x), DecMonth)))
+f.close()
+    
+    
 
 
 
